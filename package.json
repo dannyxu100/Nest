@@ -1,0 +1,27 @@
+{
+  "name": "nest",
+  "version": "1.0.0",
+  "description": "基于Nodejs和MongoDB的纯后端业务框架。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyxu100/Nest.git"
+  },
+  "keywords": [
+    "Nest",
+    "System"
+  ],
+  "author": "danny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannyxu100/Nest/issues"
+  },
+  "homepage": "https://github.com/dannyxu100/Nest#readme",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-router": "^7.4.0"
+  }
+}
