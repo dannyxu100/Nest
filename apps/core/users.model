@@ -1,0 +1,9 @@
+
+const UsersModel = {
+    name:       { type: String, required: true, minlength: 1, maxlength: 10, unique: true },
+    phone:      { type: String, required: true, minlength: 11, maxlength: 11, unique: true },
+    // 密码加密后存入数据库，没有做长度限制
+    password:   { type: String, required: true }
+};
+
+module.exports = UsersModel;

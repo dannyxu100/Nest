@@ -1,0 +1,27 @@
+const $                 = global.$;
+// const UserSchema = new require('../utils/initModel')["users"];
+const BaseService       = $.require('/apps/base.service');
+const UsersModel        = $.require('/apps/core/users.model');
+
+class UsersService extends BaseService {
+    constructor() {
+        //TODO:
+    }
+    //成员方法
+    async login() {
+        //TODO:
+    };
+
+    async logout() {
+        //TODO:
+    };
+
+    async add() {
+        //TODO:
+    };
+}
+UsersService.staticMethod = async function () {
+    //TODO:
+};
+
+module.exports = UsersService;

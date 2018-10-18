@@ -1,0 +1,18 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "user": "",
+    "pwd": "",
+    "dbname": "",
+    "replicaSet": {
+        "name": "",
+        "members": [{
+                "host": "localhost",
+                "port": "27017"
+            }, {
+                "host": "localhost",
+                "port": "27027"
+            }
+        ]
+    }
+}

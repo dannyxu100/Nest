@@ -1,4 +1,5 @@
-const Router = require('koa-router');
+const $      = global.$;
+const Router = $.require('koa-router');
 const router = new Router();
 
 
