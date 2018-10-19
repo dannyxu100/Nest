@@ -2,8 +2,6 @@ const $             = global.$;
 const Router        = $.require('koa-router');
 const router        = new Router();
 
-const users         = $.require('/apps/core/users.service');
-
 router.get('/', (ctx, next)=>{
     ctx.body = '<h1> Next Services </h1>';
 });

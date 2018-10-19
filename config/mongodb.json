@@ -3,7 +3,7 @@
     "port": 27017,
     "user": "",
     "pwd": "",
-    "dbname": "",
+    "dbname": "nest",
     "replicaSet": {
         "name": "",
         "members": [{

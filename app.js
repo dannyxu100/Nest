@@ -6,6 +6,11 @@ const Connector = $.require('/lib/connector');
 
 const app = new Koa();
 
+/* $.require('babel-register')({
+    presets: ['es2015', 'stage-3']
+}); */
+
+
 /********************** 路由 *************************/
 const router = require('./routes/router');
 app.use(router.routes());

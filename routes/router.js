@@ -3,14 +3,16 @@ const Router   = $.require('koa-router');
 
 
 
-$.log('Loading Routes...', $.logStyle.Blue);
+$.msg('Loading Routes...');
 const router = new Router();
 
 /************************ 基础路由 ***********************/
 const routerIndex = $.require("/routes/core/index");
 const routerAdmin = $.require("/routes/core/admin");
+const routerUsers = $.require("/routes/core/users");
 router.use(routerIndex.routes());
 router.use('/admin', routerAdmin.routes());
+router.use('/users', routerUsers.routes());
 
 
 
@@ -30,7 +32,7 @@ function iterator( dir ) {
         if( 'router.js' === item || 'core' === item ) {
             return true;
         }
-        // $.log(currentFolder + '/' + item, $.logStyle.Red);
+        // $.msg(currentFolder + '/' + item);
         file = $.path.join(currentFolder, '/', item);
         info = $.fs.statSync(file);
         if (info.isDirectory()) {
@@ -40,7 +42,7 @@ function iterator( dir ) {
             $.log('......File: '+ file);
             filename = $.path.basename(file, '.js');
             routerSub = $.require( file );
-            // $.log(dir, $.logStyle.Red);
+            // $.msg(dir);
             router.use(dir, routerSub.routes());
         }
     });
