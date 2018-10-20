@@ -3,17 +3,14 @@ const Router = $.require('koa-router');
 const router = new Router();
 
 
-router.get('/grouplist', (ctx, next)=>{
+router.get('/grouplist', (ctx, next) => {
     ctx.body = '/cms/grouplist';
-    //TODO:
+    // TODO:
 });
-router.get('/group/:gid', (ctx, next)=>{
+router.get('/group/:gid', (ctx, next) => {
     ctx.body = '/cms/group/:gid';
-    //TODO:
+    // TODO:
 });
-
-
-
 
 
 module.exports = router;

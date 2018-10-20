@@ -2,17 +2,14 @@ const Router = require('koa-router');
 const router = new Router();
 
 
-router.get('/company', (ctx, next)=>{
+router.get('/company', (ctx, next) => {
     ctx.body = '/oa/dept';
-    //TODO:
+    // TODO:
 });
-router.get('/dept/:gid', (ctx, next)=>{
+router.get('/dept/:gid', (ctx, next) => {
     ctx.body = '/oa/dept/:gid';
-    //TODO:
+    // TODO:
 });
-
-
-
 
 
 module.exports = router;

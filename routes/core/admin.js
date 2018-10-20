@@ -3,26 +3,19 @@ const Router = $.require('koa-router');
 const router = new Router();
 
 
-router.get('/', (ctx, next)=>{
+router.get('/', (ctx, next) => {
     ctx.body = '后台管理入口';
 });
 
-router.get('/login', (ctx, next)=>{
+router.get('/login', (ctx, next) => {
     ctx.body = '后台管理登录';
-    //TODO:
+    // TODO:
 });
 
-router.get('/logout', (ctx, next)=>{
+router.get('/logout', (ctx, next) => {
     ctx.body = '后台管理退出';
-    //TODO:
+    // TODO:
 });
-
-
-
-
-
-
-
 
 
 module.exports = router;

@@ -3,16 +3,13 @@ const Router = $.require('koa-router');
 const router = new Router();
 
 
-router.get('/', (ctx, next)=>{
+router.get('/', (ctx, next) => {
     ctx.body = '/cms';
 });
-router.get('/article/:id', (ctx, next)=>{
+router.get('/article/:id', (ctx, next) => {
     ctx.body = '/cms/article/:id';
-    //TODO:
+    // TODO:
 });
-
-
-
 
 
 module.exports = router;

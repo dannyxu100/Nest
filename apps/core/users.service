@@ -5,17 +5,17 @@ const UsersModel        = $.require('/apps/core/users.model');
 
 class UsersService extends BaseService {
     constructor() {
-        super( UsersModel );
+        super(UsersModel);
     }
-    //成员方法
+    // 成员方法
     async getphone() {
-        //TODO:
+        // TODO:
     }
 
-    //静态方法
+    // 静态方法
     static async staticMethod() {
-        //TODO:
-    };
+        // TODO:
+    }
 }
 
 module.exports = UsersService;

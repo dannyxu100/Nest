@@ -1,7 +1,7 @@
 const $         = global.$;
 const Schema    = $.mongoose.Schema;
 
-var UsersSchema = new Schema({
+const UsersSchema = new Schema({
     name: {
         type: String,
         required: true,

@@ -2,8 +2,8 @@ const $             = global.$;
 const UsersSchema   = $.require('/apps/core/users.schema');
 const UsersModel    = $.mongoose.model('Users', UsersSchema);
 
-UsersSchema.methods.add = function(cb) {
-    //TODO:
-}
+UsersSchema.methods.add = function () {
+    // TODO:
+};
 
 module.exports = UsersModel;
