@@ -132,12 +132,10 @@
         "fun-call-spacing": 0,                                              //函数调用时，函数名与()之间不能有空格
         "no-ternary": 0,                                //不允许使用三目运算符
         "no-trailing-spaces": 2,                        //一行最后不允许有空格
-        "no-underscore-dangle": 2,                      //不允许标识符以下划线开头
-        "no-extra-parens": 0,                           //不允许出现多余的括号
+        "no-underscore-dangle": 0,                      //不允许标识符以下划线开头
         "one-var": 0,                                   //强制变量声明放在一起
         "operator-assignment": 0,                       //赋值运算符的风格
         "padded-blocks": [2, "never"],                  //块内行首行尾是否空行
-        "quote-props": 0,                               //对象字面量中属性名加引号
         "quotes": [1, "single", "avoid-escape"],        //引号风格
         "semi": [2, "always"],                          //强制语句分号结尾
         "semi-spacing": [2, {"before": false, "after": true}],              //分后前后空格

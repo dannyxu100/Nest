@@ -4,22 +4,22 @@ const Schema    = $.mongoose.Schema;
 const UsersSchema = new Schema({
     name: {
         type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 10,
+        required: [true, '用户名称不能为空'],
+        minlength: [2, '用户名称不能小于2个字符'],
+        maxlength: [30, '用户名称不能大于30个字符'],
         unique: true
     },
     phone: {
         type: String,
-        required: true,
-        minlength: 11,
-        maxlength: 11,
+        required: [true, '手机号码不能为空'],
+        minlength: [11, '手机号码应该为11位'],
+        maxlength: [11, '手机号码应该为11位'],
         unique: true
     },
     // 密码加密后存入数据库，没有做长度限制
     password: {
         type: String,
-        required: true
+        required: [true, '密码不能为空']
     }
 });
 

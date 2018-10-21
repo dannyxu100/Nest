@@ -6,14 +6,13 @@ const UsersService  = $.require('/apps/core/users.service');
 
 router.get('/add', (ctx, next) => {
     let users = new UsersService();
-    let p = users.create({
-        name:       '三十',
-        phone:      '13688387776',
-        password:   '123456'
-    });
-    p.then((res) => {
+    users.create({
+        'name':       '三',
+        'phone':      '13688387774',
+        'password':   '123456'
+    }).then((res) => {
         // debugger;
-    }, (res) => {
+    }, (err) => {
         // debugger;
     });
 });
