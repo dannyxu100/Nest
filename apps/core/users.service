@@ -8,13 +8,32 @@ class UsersService extends BaseService {
         super(UsersModel);
     }
     // 成员方法
-    async getphone() {
+    async detail() {
         // TODO:
     }
 
     // 静态方法
-    static async staticMethod() {
-        // TODO:
+    static detail(userid) {
+        let users = new UsersService();
+        return users.findOne({
+            '_id': userid
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    }
+    static add(obj) {
+        let users = new UsersService();
+        return users.create({
+            'name':       obj.name,
+            'phone':      obj.phone,
+            'password':   obj.password
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
     }
 }
 

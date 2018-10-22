@@ -4,17 +4,16 @@ const router        = new Router();
 
 const UsersService  = $.require('/apps/core/users.service');
 
-router.get('/add', (ctx, next) => {
-    let users = new UsersService();
-    users.create({
-        'name':       '三',
-        'phone':      '13688387774',
-        'password':   '123456'
-    }).then((res) => {
-        // debugger;
-    }, (err) => {
-        // debugger;
-    });
+
+/** ************************* GET ****************************/
+router.get('/detail/:id', async (ctx) => {
+    ctx.body = await UsersService.detail(ctx.params.id);
+});
+
+
+/** ************************* POST ****************************/
+router.post('/add', async (ctx) => {
+    ctx.body = await UsersService.add(ctx.request.body);
 });
 
 

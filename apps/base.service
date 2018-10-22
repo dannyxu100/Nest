@@ -5,12 +5,34 @@ class BaseService {
         this.Model = Model;
     }
 
-    handlefail(err) {
-        $.error(`BaseService error--> ${err.message}`);
+
+    fail(err) {
+        $.error(`BaseService Error: ${err.message}`);
+        let res = {
+            'result': false,
+            'code': 0,
+            'message': '',
+            'description': ''
+        };
         if (err.message.indexOf('duplicate key error') !== -1) {
-            return '用户已存在';
+            res.code = -100;
+            res.message = '相同的记录已存在';
+        } else if (err.message.indexOf('Cast to ObjectId failed for value') !== -1) {
+            res.code = -200;
+            res.message = 'id值无效';
+        } else {
+            res.code = err.code || -300;
+            res.message = err.message;
         }
-        return err.message;
+        res.description = err.message;
+        return res;
+    }
+
+    success(res) {
+        return {
+            'result': true,
+            'data': res
+        };
     }
 
     create(obj) {
@@ -20,7 +42,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -33,7 +55,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -45,7 +67,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -57,7 +79,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -69,7 +91,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -81,7 +103,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
@@ -95,7 +117,7 @@ class BaseService {
                 if (err) {
                     reject(this.fail(err));
                 } else {
-                    resolve(res);
+                    resolve(this.success(res));
                 }
             });
         });
