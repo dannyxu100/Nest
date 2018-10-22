@@ -25,10 +25,16 @@ class UsersService extends BaseService {
     }
     static add(obj) {
         let users = new UsersService();
-        return users.create({
-            'name':       obj.name,
-            'phone':      obj.phone,
-            'password':   obj.password
+        return users.create(obj).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    }
+    static remove(userid) {
+        let users = new UsersService();
+        return users.remove({
+            '_id': userid
         }).then((res) => {
             return res;
         }, (err) => {
