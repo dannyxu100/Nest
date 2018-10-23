@@ -7,16 +7,24 @@ const UsersService  = $.require('/apps/core/users.service');
 
 /** ************************* GET ****************************/
 router.get('/detail/:id', async (ctx) => {
-    ctx.body = await UsersService.detail(ctx.params.id);
+    ctx.body = await UsersService.findById(ctx.params.id);
+});
+router.get('/list/:id', async (ctx) => {
+    ctx.body = await UsersService.findPage();
 });
 
 
 /** ************************* POST ****************************/
 router.post('/add', async (ctx) => {
-    ctx.body = await UsersService.add(ctx.request.body);
+    ctx.body = await UsersService.create(ctx.request.body);
+});
+router.post('/update', async (ctx) => {
+    let id = ctx.request.body.id;
+    delete ctx.request.body.id;
+    ctx.body = await UsersService.updateById(id, ctx.request.body);
 });
 router.post('/remove', async (ctx) => {
-    ctx.body = await UsersService.remove(ctx.request.body.id);
+    ctx.body = await UsersService.removeById(ctx.request.body.id);
 });
 
 

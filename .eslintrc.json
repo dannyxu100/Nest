@@ -4,6 +4,7 @@
       "commonjs": true,
       "es6": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {},
     "globals": {},
     "extends": "standard",
@@ -18,7 +19,7 @@
         参数2 ： 处理方式 */
         "indent":[1,4],
         "comma-dangle": ["error", "never"],         //是否允许对象中出现结尾逗号
-        "no-cond-assign": 2,                        //条件语句的条件中不允许出现赋值运算符
+        "no-cond-assign": 0,                        //条件语句的条件中不允许出现赋值运算符
         "no-console": 1,                            //不允许出现console语句
         "no-constant-condition": 2,                 //条件语句的条件中不允许出现恒定不变的量
         "no-control-regex": 2,                      //正则表达式中不允许出现控制字符
@@ -87,7 +88,7 @@
         "no-octal-escape": 2,                               //不允许使用八进制转义序列
         "no-param-reassign": 0,                             //不允许重新分配函数参数"no-proto": 2, //不允许使用__proto__属性
         "no-redeclare": 2,                                  //不允许变量重复声明
-        "no-return-assign": 2,                              //不允许在return语句中使用分配语句
+        "no-return-assign": 0,                              //不允许在return语句中使用分配语句
         "no-script-url": 2,                                 //不允许使用javascript:void(0)
         "no-self-compare": 2,                               //不允许自己和自己比较
         "no-sequences": 2,                                  //不允许使用逗号表达式

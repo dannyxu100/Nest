@@ -8,14 +8,29 @@ class UsersService extends BaseService {
         super(UsersModel);
     }
     // 成员方法
-    async detail() {
+    getPhone() {
         // TODO:
     }
 
     // 静态方法
-    static detail(userid) {
-        let users = new UsersService();
-        return users.findOne({
+    static create(obj) {
+        return new UsersService().create(obj).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    }
+    static updateById(userid, newObj) {
+        return new UsersService().updateById({
+            '_id': userid
+        }, newObj).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    }
+    static removeById(userid) {
+        return new UsersService().removeById({
             '_id': userid
         }).then((res) => {
             return res;
@@ -23,19 +38,17 @@ class UsersService extends BaseService {
             return err;
         });
     }
-    static add(obj) {
-        let users = new UsersService();
-        return users.create(obj).then((res) => {
+    static findById(userid) {
+        return new UsersService().findById({
+            '_id': userid
+        }).then((res) => {
             return res;
         }, (err) => {
             return err;
         });
     }
-    static remove(userid) {
-        let users = new UsersService();
-        return users.remove({
-            '_id': userid
-        }).then((res) => {
+    static findPage() {
+        return new UsersService().findAll().then((res) => {
             return res;
         }, (err) => {
             return err;

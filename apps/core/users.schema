@@ -2,25 +2,31 @@ const $         = global.$;
 const Schema    = $.mongoose.Schema;
 
 const UsersSchema = new Schema({
-    name: {
-        type: String,
-        required: [true, '用户名称不能为空'],
-        minlength: [2, '用户名称不能小于2个字符'],
-        maxlength: [30, '用户名称不能大于30个字符'],
-        unique: true
+    'name': {
+        'type': String,
+        'required': [true, '用户名称不能为空'],
+        'minlength': [2, '用户名称不能小于2个字符'],
+        'maxlength': [30, '用户名称不能大于30个字符'],
+        'unique': true
     },
-    phone: {
-        type: String,
-        required: [true, '手机号码不能为空'],
-        minlength: [11, '手机号码应该为11位'],
-        maxlength: [11, '手机号码应该为11位'],
-        unique: true
+    'phone': {
+        'type': String,
+        'required': [true, '手机号码不能为空'],
+        'minlength': [11, '手机号码应该为11位'],
+        'maxlength': [11, '手机号码应该为11位'],
+        'unique': true
     },
     // 密码加密后存入数据库，没有做长度限制
-    password: {
-        type: String,
-        required: [true, '密码不能为空']
+    'password': {
+        'type': String,
+        'required': [true, '密码不能为空']
     }
+}, {
+    'timestamps': {
+        'createdAt': 'created_date',
+        'updatedAt': 'updated_date'
+    },
+    'versionKey': false
 });
 
 
