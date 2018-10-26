@@ -6,11 +6,12 @@ const UsersService  = $.require('/apps/core/users.service');
 
 
 /** ************************* GET ****************************/
-router.get('/detail/:id', async (ctx) => {
+router.get('/detail/:id', async (ctx, next) => {
     ctx.body = await UsersService.findById(ctx.params.id);
+    next();
 });
-router.get('/list/:id', async (ctx) => {
-    ctx.body = await UsersService.findPage();
+router.get('/pages/:page?/:limit?', async (ctx) => {
+    ctx.body = await UsersService.findPage(ctx.params.page, ctx.params.limit);
 });
 
 

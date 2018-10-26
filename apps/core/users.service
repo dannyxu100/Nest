@@ -47,8 +47,11 @@ class UsersService extends BaseService {
             return err;
         });
     }
-    static findPage() {
-        return new UsersService().findAll().then((res) => {
+    static findPage(page, limit) {
+        return new UsersService().findPage({
+            'page': page,
+            'limit': limit
+        }).then((res) => {
             return res;
         }, (err) => {
             return err;

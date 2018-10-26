@@ -27,6 +27,13 @@ app.use(router.allowedMethods());
 app.use((ctx, next) => {
     try {
         next();
+    } catch (err) {
+        ctx.body = err.message;
+    }
+});
+app.use((ctx, next) => {
+    try {
+        next();
         if (ctx.status === 404) {
             ctx.throw(404);
         }
