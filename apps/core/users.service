@@ -13,48 +13,28 @@ class UsersService extends BaseService {
     }
 
     // 静态方法
-    static create(obj) {
-        return new UsersService().create(obj).then((res) => {
-            return res;
-        }, (err) => {
-            return err;
-        });
+    static async create(obj) {
+        return new UsersService().create(obj);
     }
-    static updateById(userid, newObj) {
+    static async updateById(userid, newObj) {
         return new UsersService().updateById({
             '_id': userid
-        }, newObj).then((res) => {
-            return res;
-        }, (err) => {
-            return err;
-        });
+        }, newObj);
     }
-    static removeById(userid) {
+    static async removeById(userid) {
         return new UsersService().removeById({
             '_id': userid
-        }).then((res) => {
-            return res;
-        }, (err) => {
-            return err;
         });
     }
-    static findById(userid) {
+    static async findById(userid) {
         return new UsersService().findById({
             '_id': userid
-        }).then((res) => {
-            return res;
-        }, (err) => {
-            return err;
         });
     }
-    static findPage(page, limit) {
+    static async findPage(page, limit) {
         return new UsersService().findPage({
             'page': page,
             'limit': limit
-        }).then((res) => {
-            return res;
-        }, (err) => {
-            return err;
         });
     }
 }

@@ -22,18 +22,19 @@ app.use(Body({
 
 /** ******************** 路由 *************************/
 const router = require('./routes/router');
+// app.use(async (ctx, next) => {
+//     try {
+//         await next();
+//     } catch (err) {
+//         ctx.body = err.message;
+//     }
+// });
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use((ctx, next) => {
+
+app.use(async (ctx, next) => {
     try {
-        next();
-    } catch (err) {
-        ctx.body = err.message;
-    }
-});
-app.use((ctx, next) => {
-    try {
-        next();
+        await next();
         if (ctx.status === 404) {
             ctx.throw(404);
         }
@@ -47,6 +48,8 @@ app.use((ctx, next) => {
         } else if (status === 500) {
             // ctx.render('./500');
             ctx.body = 'Internal Server Error：500';
+        } else {
+            ctx.body = err.message;
         }
     }
 });
