@@ -30,4 +30,38 @@ const UsersSchema = new Schema({
 });
 
 
+UsersSchema.pre('save', async function (next) {
+    // $.msg('save');
+    if (this.password) {
+        this.password = await $.bcrypt(this.password);
+    }
+    next();
+});
+UsersSchema.pre('updateOne', async function (next) {
+    // $.msg('update');
+    if (this._update.password) {
+        this._update.password = await $.bcrypt(this._update.password);
+    }
+    /* this.update({}, {
+        'password': await $.bcrypt(this._update.password)
+    }, (err, res) => {
+        debugger;
+    }); */
+    next();
+});
+UsersSchema.pre('update', async function (next) {
+    // $.msg('update');
+    if (this._update.password) {
+        this._update.password = await $.bcrypt(this._update.password);
+    }
+    next();
+});
+UsersSchema.pre('updateMany', async function (next) {
+    // $.msg('update');
+    if (this._update.password) {
+        this._update.password = await $.bcrypt(this._update.password);
+    }
+    next();
+});
+
 module.exports = UsersSchema;

@@ -99,7 +99,7 @@ class BaseService {
     }
 
     async update(condition, newObj) {
-        return this.Model.update(condition, newObj).then((doc) => {
+        return this.Model.updateMany(condition, newObj).then((doc) => {
             return this.success(doc, 'update');
         }, (err) => {
             return this.fail(err);
@@ -107,7 +107,7 @@ class BaseService {
     }
 
     async updateById(id, newObj) {
-        return this.Model.update({
+        return this.Model.updateOne({
             '_id': id
         }, newObj).then((doc) => {
             if (doc.n === 0) {
