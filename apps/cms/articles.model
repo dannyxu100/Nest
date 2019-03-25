@@ -1,0 +1,9 @@
+const $                 = global.$;
+const ArticlesSchema    = $.require('/apps/cms/articles.schema');
+const ArticlesModel     = $.mongoose.model('crm_articles', ArticlesSchema);
+
+/* ArticlesSchema.methods.add = function () {
+    // TODO:
+}; */
+
+module.exports = ArticlesModel;

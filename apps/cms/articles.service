@@ -1,21 +1,21 @@
 const $                 = global.$;
 // const UserSchema = new require('../utils/initModel')["users"];
 const BaseService       = $.require('/apps/base.service');
-const UsersModel        = $.require('/apps/core/users.model');
+const ArticlesModel     = $.require('/apps/cms/articles.model');
 
-class UsersService extends BaseService {
+class ArticlesService extends BaseService {
     constructor() {
-        super(UsersModel);
+        super(ArticlesModel);
     }
     // 成员方法
-    getPhone() {
+    getTitle() {
         // TODO:
     }
 
     // 静态方法
     /* static async create(obj) {
-        return new UsersService().create(obj);
+        return new ArticlesService().create(obj);
     } */
 }
 
-module.exports = UsersService;
+module.exports = ArticlesService;

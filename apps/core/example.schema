@@ -1,0 +1,30 @@
+const $         = global.$;
+const Schema    = $.mongoose.Schema;
+
+const ExampleSchema = new Schema({
+    'name': {
+        'type': String,
+        'required': [true, '用户名称不能为空'],
+        'minlength': [2, '用户名称不能小于2个字符'],
+        'maxlength': [30, '用户名称不能大于30个字符'],
+        'unique': true
+    },
+    'password': {
+        'type': String,
+        'required': [true, '密码不能为空']
+    }
+}, {
+    'timestamps': {
+        'createdAt': 'created_date',
+        'updatedAt': 'updated_date'
+    },
+    'versionKey': false
+});
+
+
+/* ExampleSchema.pre('save', async function (next) {
+    // TODO:
+    next();
+}); */
+
+module.exports = ExampleSchema;

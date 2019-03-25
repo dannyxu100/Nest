@@ -1,0 +1,30 @@
+const $         = global.$;
+const Schema    = $.mongoose.Schema;
+
+const ArticlesSchema = new Schema({
+    'title': {
+        'type': String,
+        'required': [true, '标题不能为空'],
+        'minlength': [2, '标题不能小于2个字符'],
+        'maxlength': [100, '标题不能大于100个字符'],
+        'unique': true
+    },
+    'content': {
+        'type': String,
+        'required': [true, '内容不能为空']
+    }
+}, {
+    'timestamps': {
+        'createdAt': 'created_date',
+        'updatedAt': 'updated_date'
+    },
+    'versionKey': false
+});
+
+
+/* ArticlesSchema.pre('save', async function (next) {
+    // TODO:
+    next();
+}); */
+
+module.exports = ArticlesSchema;

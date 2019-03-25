@@ -1,0 +1,9 @@
+const $                 = global.$;
+const ExampleSchema     = $.require('/apps/core/example.schema');
+const ExampleModel      = $.mongoose.model('nest_example', ExampleSchema);
+
+/* ExampleSchema.methods.add = function () {
+    // TODO:
+}; */
+
+module.exports = ExampleModel;

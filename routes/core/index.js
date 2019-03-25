@@ -2,17 +2,23 @@ const $             = global.$;
 const Router        = $.require('koa-router');
 const router        = new Router();
 
-router.get('/', (ctx, next) => {
+/** ************************* GET ****************************/
+router.get('/', async (ctx) => {
     ctx.body = '<h1> Next Services </h1>';
 });
 
-router.get('/login', (ctx, next) => {
-    ctx.body = '登录';
+router.get('/login', async (ctx) => {
+    // ctx.body = '登录';
     // TODO:
 });
 
-router.get('/logout', (ctx, next) => {
-    ctx.body = '退出';
+router.get('/logout', async (ctx) => {
+    // ctx.body = '退出';
+});
+
+
+/** ************************* POST ****************************/
+router.post('/login', async (ctx) => {
     // TODO:
 });
 

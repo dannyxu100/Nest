@@ -3,6 +3,8 @@ global.$            = $;
 const Koa           = $.require('koa');
 const Body          = $.require('koa-body');
 const Connector     = $.require('/lib/connector');
+const jwt           = $.require('jsonwebtoken');
+const tokenconfig   = $.require('/config/token');
 
 
 const app = new Koa();
@@ -32,6 +34,15 @@ const router = require('./routes/router');
 app.use(router.routes());
 app.use(router.allowedMethods());
 
+app.use(async (ctx, next) => {
+    /* let payload = {
+        'userid':       '5bd82bc4ad02e420d8417119',
+        'username':     '马丽丽'
+    };
+    let token = jwt.sign(payload, tokenconfig.secret.user);
+    ctx.body = '登录成功：' + token; */
+    next();
+});
 app.use(async (ctx, next) => {
     try {
         await next();

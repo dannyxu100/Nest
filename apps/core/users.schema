@@ -42,11 +42,6 @@ UsersSchema.pre('updateOne', async function (next) {
     if (this._update.password) {
         this._update.password = await $.bcrypt(this._update.password);
     }
-    /* this.update({}, {
-        'password': await $.bcrypt(this._update.password)
-    }, (err, res) => {
-        debugger;
-    }); */
     next();
 });
 UsersSchema.pre('update', async function (next) {

@@ -1,6 +1,6 @@
 const $             = global.$;
 const UsersSchema   = $.require('/apps/core/users.schema');
-const UsersModel    = $.mongoose.model('Users', UsersSchema);
+const UsersModel    = $.mongoose.model('nest_users', UsersSchema);
 
 UsersSchema.methods.add = function () {
     // TODO:
